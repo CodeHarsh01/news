@@ -1,0 +1,355 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "poppins";
+}
+
+:root {
+    --back: rgb(247, 247, 247);
+    --text: rgb(65, 65, 65);
+    --hover: rgb(238, 206, 21);
+    --black: black;
+}
+
+body {
+    padding: 15px 60px;
+    background-color: var(--back);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    min-height: 5vw;
+    /* background-color: aqua; */
+    align-items: center;
+    padding: 10px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h1  a{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: "roboto";
+    font-size: 1.3em;
+    text-decoration: none;
+    color: black;
+}
+
+.logo i {
+    display: none;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+nav ul li {
+    list-style: none;
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: var(--text);
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+nav ul li a:hover {
+    color: var(--hover);
+}
+
+
+
+nav .search-box {
+    position: relative;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+nav .search-box i {
+    font-size: 1em;
+    position: absolute;
+    left: 6px;
+}
+
+nav .search-box input {
+    font-size: 0.95em;
+    border-radius: 8px;
+    border: 1px solid var(--black);
+    padding: 4px;
+    padding-left: 25px;
+}
+
+nav .search-box input::placeholder {
+    padding-left: 22px;
+}
+
+nav .search-box input:focus {
+    border: 2px solid var(--hover);
+}
+
+main{
+    margin-top: 5vw;
+    height: 100%;
+    display: grid;
+    row-gap: 100px;
+  column-gap: 50px;
+  grid-template-columns: auto auto auto;
+    width:100%;
+    
+}
+
+main .card,.newscard{
+    height: 100%;
+    width: 24vw;
+    padding: 20px;
+    display: flex;
+    margin: 0 30px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.044), 0 6px 20px 0 rgba(0, 0, 0, 0.082);
+    border-radius: 20px;
+}
+
+.card-header{
+    width: 100%;
+}
+.card-header img{
+    width: 100%;
+}
+.card-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-content h3{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.news-desc{
+    width: 100%;
+    text-align: center;
+}
+
+#news-img{
+    height: 200PX;
+    object-fit: cover;
+
+}
+#news-title{
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+
+@media only screen and (max-width:1100px){
+    main .card,.newscard{
+        height: 100%;
+        width: 320px;
+        padding: 20px;
+        display: flex;
+        margin: 0 30px;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.044), 0 6px 20px 0 rgba(0, 0, 0, 0.082);
+        border-radius: 20px;
+    }
+    
+    main{
+        margin-top: 5vw;
+        height: 100%;
+        display: grid;
+        row-gap: 100px;
+      column-gap: 20px;
+      grid-template-columns: auto auto ;
+        width:100%;
+        
+    }
+}
+
+@media only screen and (max-width:900px){
+    nav {
+
+
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    body {
+        padding: 10px 20px;
+    }
+
+    .logo {
+
+        align-items: start;
+        width: 100%;
+        justify-content: space-between;
+
+    }
+
+    .logo .icon {
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .logo i {
+        display: block;
+        font-size: 1.2em;
+        position: absolute;
+        top: 5.5px;
+        right: 10px;
+    }
+
+    #cross{
+        display: none;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 40px;
+        display: NONE;
+        transition: transform 0.3s ;
+    }
+
+    nav .search-box
+    {
+        transition: transform 0.3s ease-in-out;
+        display: none;
+        cursor: pointer;
+    }
+
+    nav .search-box i,input{
+        cursor: pointer;
+    }
+
+    main{
+        margin-top: 5vw;
+        height: 100%;
+        display: grid;
+        row-gap: 100px;
+      column-gap: 10px;
+      grid-template-columns: auto auto ;
+        width:100%;
+        
+    }
+    main .card,.newscard{
+    
+        margin: 0px;
+    }
+}
+
+@media only screen and (max-width:800px){
+    
+    main{
+        margin-top: 5vw;
+        height: 100%;
+        display: grid;
+        row-gap: 100px;
+      column-gap: 20pxpx;
+      grid-template-columns: auto auto ;
+        width:100%;
+        
+    }
+    
+    
+    main .card{
+    
+        margin: 0px;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    nav {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    body {
+        padding: 10px 20px;
+    }
+
+    .logo {
+
+        align-items: start;
+        width: 100%;
+        justify-content: space-between;
+
+    }
+
+    .logo .icon {
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .logo i {
+        display: block;
+        font-size: 1.2em;
+        position: absolute;
+        top: 5.5px;
+        right: 10px;
+    }
+
+    #cross{
+        display: none;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 40px;
+        display: none;
+        transition: ALL 0.5s;
+    }
+
+    nav .search-box
+    {
+        transition: transform 0.3s ease-in-out;
+        display: none;
+        cursor: pointer;
+    }
+
+    nav .search-box i,input{
+        cursor: pointer;
+    }
+
+    main .card, .newscard{
+        width: 280px;
+        margin: 30px 0;
+    }
+
+    main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
